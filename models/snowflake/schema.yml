@@ -12,7 +12,7 @@ models:
       - name: DATE
         description: "null values in date column"
         data_tests:
-          - unique
+          - not null
 
 sources:
     - name: sample_data
