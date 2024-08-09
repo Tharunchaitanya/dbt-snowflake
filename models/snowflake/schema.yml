@@ -1,0 +1,22 @@
+
+version: 2
+
+models:
+  - name: first
+    description: "snowflake first dbt model"
+    columns:
+      - name: MSNO
+        description: "The primary key for this table"
+        data_tests:
+          - not_null
+      - name: DATE
+        description: "null values in date column"
+        data_tests:
+          - unique
+
+sources:
+    - name: sample_data
+      database: AWS_S3
+      schema: PUBLIC
+      tables:
+        - name: USER_LOGS
